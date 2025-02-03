@@ -1,15 +1,19 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using TrilhaApiDesafio.Models;
+using ModuloAPI.Entityes;
 
-namespace TrilhaApiDesafio.Context
+namespace ModuloAPI.Context
 {
-    public class OrganizadorContext : DbContext
+    public class AgendaContext : DbContext  // Classe para ligar o bando de dados ao aplicativo
     {
-        public OrganizadorContext(DbContextOptions<OrganizadorContext> options) : base(options)
+        public AgendaContext(DbContextOptions<AgendaContext> options) : base(options)
         {
-            
+
         }
 
-        public DbSet<Tarefa> Tarefas { get; set; }
+        public DbSet<Contato> Contatos{ get; set; } // Propriedade que se refere a entidade (contato) (classe no progama e tabela no sql)
     }
 }
